@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorLight"
+            android:fontFamily="@font/bungee_shade"
+            android:drawableRight="@drawable/splash_logo"
+            android:gravity="center_horizontal"
+            android:text=" - Note purple -"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:fontFamily="@font/satisfy"
+    android:gravity="center_horizontal"
+    android:shadowColor="@color/colorPrimaryDark"
+    android:shadowDx="5"
+    android:shadowDy="5"
+    android:shadowRadius="10"
+    android:text="Mis notas..."
+    android:textColor="@color/colorLight"
+    android:textSize="40sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="338dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/listNota"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/satisfy"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="21sp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/agregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_texto"
+            android:drawableStart="@drawable/agregar"
+            android:fontFamily="@font/poiret_one"
+            android:text="  Crear Nota"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp"></Button>
+
+    </RelativeLayout>
+</LinearLayout>
+
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
+
+    <ImageView
+        android:id="@+id/iv_item_nota"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/nota"
+        android:layout_weight="8"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:text="textview">
+
+        <TextView
+            android:id="@+id/tv_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorLight"
+            android:paddingStart="8dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/satisfy"
+            android:layout_gravity="center_vertical"
+            android:text="textview" />
+
+        <TextView
+            android:id="@+id/tv_contenido"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poiret_one"
+            android:textColor="@color/colorLight"
+            android:paddingStart="8dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:text="Textview" />
+    </LinearLayout>
+
+</LinearLayout>
