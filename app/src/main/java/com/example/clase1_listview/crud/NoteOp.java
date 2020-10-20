@@ -4,17 +4,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.TextView;;
-import com.example.clase1_listview.R;
 import com.example.clase1_listview.database.SQLHelper;
 import com.example.clase1_listview.models.NoteMd;
 import java.util.ArrayList;
 
-public class NoteOp  extends BaseAdapter {
+public class NoteOp{
 
     private String DBNAME="dbnota1";
     private int VERSION=1;
@@ -23,17 +17,11 @@ public class NoteOp  extends BaseAdapter {
     private SQLiteDatabase database;
     private SQLHelper helper;
     private NoteMd model;
-    private ArrayList<NoteMd> listado;
 
 
     public NoteOp(Context context) {
         this.context = context;
         helper = new SQLHelper(context,DBNAME,null,VERSION);
-    }
-
-    public NoteOp(Context context, ArrayList<NoteMd> listado) {
-        this.context = context;
-        this.listado = listado;
     }
 
     protected void openRead(){
@@ -80,7 +68,7 @@ public class NoteOp  extends BaseAdapter {
         return list;
     }
 
-    public ArrayList<NoteMd> selectNotaForId(int id){
+    /*public ArrayList<NoteMd> selectNotaForId(int id){
         openRead();
         String where = "id ?";
         String idtext = String.valueOf(id);
@@ -102,7 +90,7 @@ public class NoteOp  extends BaseAdapter {
             return listado;
         }
 
-    }
+    }*/
 
     public NoteMd selectForId(int id){
         openRead();
@@ -141,40 +129,5 @@ public class NoteOp  extends BaseAdapter {
         long resp=database.delete("Nota", where, new String[]{textId});
         close();
         return resp;
-    }
-
-    @Override
-    public int getCount() {
-        return listado.size();
-    }
-
-    @Override
-    public Object getItem(int i) {
-        return listado.get(i);
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        View viewItemNota = view;
-        if (view == null){
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            viewItemNota = inflater.inflate(R.layout.item_nota, viewGroup, false);
-        }
-
-        model = (NoteMd) getItem(i);
-
-        TextView tv_titulo, tv_contenido;
-        tv_titulo = viewItemNota.findViewById(R.id.tv_titulo);
-        tv_contenido = viewItemNota.findViewById(R.id.tv_contenido);
-
-        tv_titulo.setText(model.getTitulo());
-        tv_contenido.setText(model.getContenido());
-
-        return viewItemNota;
     }
 }
